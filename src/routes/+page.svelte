@@ -1,2 +1,11 @@
-<h1 class="text-blue-500">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Banner from './sections/Banner.svelte';
+	import DayAtOurSchool from './sections/DayAtOurSchool.svelte';
+	import Foundation from './sections/Foundation.svelte';
+</script>
+
+<div class="h-full w-full">
+	<Banner />
+	<Foundation />
+	<DayAtOurSchool />
+</div>
