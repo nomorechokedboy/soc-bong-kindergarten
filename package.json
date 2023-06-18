@@ -54,5 +54,10 @@
 			"prettier --write",
 			"eslint --fix"
 		]
+	},
+	"dependencies": {
+		"embla-carousel-autoplay": "8.0.0-rc07",
+		"embla-carousel-svelte": "8.0.0-rc07",
+		"svelte-markdown": "^0.2.3"
 	}
 }

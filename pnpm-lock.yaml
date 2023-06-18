@@ -11,6 +11,8 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   autoprefixer: ^10.4.14
+  embla-carousel-autoplay: 8.0.0-rc07
+  embla-carousel-svelte: 8.0.0-rc07
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte: ^2.26.0
@@ -23,6 +25,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.3.0
   svelte: ^3.54.0
   svelte-check: ^3.0.1
+  svelte-markdown: ^0.2.3
   svelte-preprocess: ^5.0.3
   tailwindcss: ^3.3.1
   tslib: ^2.4.1
@@ -30,6 +33,11 @@ specifiers:
   unplugin-icons: ^0.16.2
   vite: ^4.3.0
   vitest: ^0.25.3
+
+dependencies:
+  embla-carousel-autoplay: 8.0.0-rc07_embla-carousel@8.0.0-rc07
+  embla-carousel-svelte: 8.0.0-rc07_svelte@3.59.1
+  svelte-markdown: 0.2.3_svelte@3.59.1
 
 devDependencies:
   '@commitlint/cli': 17.6.5
@@ -743,6 +751,10 @@ packages:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
 
+  /@types/marked/4.3.1:
+    resolution: {integrity: sha512-vSSbKZFbNktrQ15v7o1EaH78EbWV+sPQbPjHG+Cp8CaNcPFUEfjZ0Iml/V0bFDwsTlYe8o6XC5Hfdp91cqPV2g==}
+    dev: false
+
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
@@ -1430,6 +1442,36 @@ packages:
   /electron-to-chromium/1.4.414:
     resolution: {integrity: sha512-RRuCvP6ekngVh2SAJaOKT/hxqc9JAsK+Pe0hP5tGQIfonU2Zy9gMGdJ+mBdyl/vNucMG6gkXYtuM4H/1giws5w==}
     dev: true
+
+  /embla-carousel-autoplay/8.0.0-rc07_embla-carousel@8.0.0-rc07:
+    resolution: {integrity: sha512-gwtSBgwdmveGwaltjLhDJwdg55lUxvTxQ3V+zXyfJ/LvOwfWERyP6/DGJ99a0SJBI19N6DZyy1e2NB3HLrCIDw==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc07
+    dependencies:
+      embla-carousel: 8.0.0-rc07
+    dev: false
+
+  /embla-carousel-reactive-utils/8.0.0-rc07_embla-carousel@8.0.0-rc07:
+    resolution: {integrity: sha512-MfdReTR3p0GTcUqLY0DNF5mkYRHF/pler9yBUjRjjjBb1OTQjcFedXYhoCDO49009x/IPM00kcbQQuEtJWpQRQ==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc07
+    dependencies:
+      embla-carousel: 8.0.0-rc07
+    dev: false
+
+  /embla-carousel-svelte/8.0.0-rc07_svelte@3.59.1:
+    resolution: {integrity: sha512-6CUumJjHxcl1coA1gVAS8CS6fQ6ca3omcsNKWBgAnWfzPOFxFnLbCKfMaaQ3dBFdT1Fuy+WV625aQVJdrJV7VQ==}
+    peerDependencies:
+      svelte: ^3.49.0
+    dependencies:
+      embla-carousel: 8.0.0-rc07
+      embla-carousel-reactive-utils: 8.0.0-rc07_embla-carousel@8.0.0-rc07
+      svelte: 3.59.1
+    dev: false
+
+  /embla-carousel/8.0.0-rc07:
+    resolution: {integrity: sha512-IdGbZH042gRT0/3dOCbiv45jOt5E7jpM4h25VzyJujule/3GitJ1/Ib3U/X83auiI3aojKoBe13e1g5g7bwnjg==}
+    dev: false
 
   /emoji-regex/8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2284,6 +2326,12 @@ packages:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /marked/4.3.0:
+    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: false
 
   /meow/8.1.2:
     resolution: {integrity: sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==}
@@ -3259,6 +3307,16 @@ packages:
       svelte: 3.59.1
     dev: true
 
+  /svelte-markdown/0.2.3_svelte@3.59.1:
+    resolution: {integrity: sha512-2h680NzTXnAD0CXhxe3GeHl6W+ayG4iKQRl+BIDRw+R0mUE0OiNxP1Vt8Rn+aWevB/LBiBIPCAwvL+0BkG057A==}
+    peerDependencies:
+      svelte: ^3.0.0
+    dependencies:
+      '@types/marked': 4.3.1
+      marked: 4.3.0
+      svelte: 3.59.1
+    dev: false
+
   /svelte-preprocess/5.0.4_kpl6jewuwqyogmjayljaqbq36e:
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
@@ -3311,7 +3369,6 @@ packages:
   /svelte/3.59.1:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tailwindcss/3.3.2_ts-node@10.9.1:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
