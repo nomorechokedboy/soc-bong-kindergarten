@@ -3,10 +3,10 @@
 </script>
 
 <div
-	class="flex w-full flex-col items-center gap-8 bg-white px-9 py-5 lg:absolute {$$props.class}"
+	class="flex w-full flex-col items-center gap-8 bg-white px-9 py-5 lg:px-[60px] lg:py-10 {$$props.class}"
 	id={$$props.id}
 >
-	<h3 class="w-full text-center text-lg font-extrabold uppercase text-indigo-950">
+	<h3 class="w-full text-center text-lg font-extrabold uppercase text-indigo-950 md:text-2xl">
 		ĐĂNG KÝ TRẢI NGHIỆM
 		<br />
 		LỚP HỌC THỬ

@@ -41,8 +41,8 @@
 
 <footer class="flex flex-col bg-[#efefef] py-12">
 	<section class="px-4">
-		<div class="flex flex-col justify-center">
-			<div class="grid place-items-center">
+		<div class="flex flex-col justify-center lg:flex-row lg:gap-[150px]">
+			<div class="grid place-items-center lg:place-items-start">
 				<a href="/">
 					<img
 						class="w-20 lg:w-auto"
@@ -53,55 +53,59 @@
 					/>
 				</a>
 			</div>
-			<div class="flex flex-col gap-8 pb-5">
-				<h2 class="text-center text-2xl font-semibold uppercase text-indigo-950">
-					HỆ THỐNG MẦM NON ilo academy
-				</h2>
-				<div class="flex flex-col gap-4">
-					{#each locations as { address, location }}
-						<div class="flex gap-5">
-							<LocationIcon
-								class="flex-shrink-0 flex-grow-0 text-[#06074d]"
-								width="35"
-								height="35"
-							/>
-							<div class="flex flex-col gap-1 text-left text-sm text-neutral-700">
-								<p class="font-semibold uppercase">
-									{location}
-								</p>
-								<p class="font-light">
-									{address}
-								</p>
+			<div class="flex flex-1 flex-col">
+				<div class="flex flex-col gap-8 pb-5">
+					<h2 class="text-center text-2xl font-semibold uppercase text-indigo-950 lg:text-left">
+						HỆ THỐNG MẦM NON ilo academy
+					</h2>
+					<div class="flex flex-col gap-4">
+						{#each locations as { address, location }}
+							<div class="flex gap-5">
+								<LocationIcon
+									class="flex-shrink-0 flex-grow-0 text-[#06074d]"
+									width="35"
+									height="35"
+								/>
+								<div class="flex flex-col gap-1 text-left text-sm text-neutral-700">
+									<p class="font-semibold uppercase">
+										{location}
+									</p>
+									<p class="font-light">
+										{address}
+									</p>
+								</div>
 							</div>
-						</div>
-					{/each}
-				</div>
-			</div>
-			<div class="flex flex-col gap-5 border-t border-[#afb2b4] pt-5">
-				<div class="flex flex-col gap-1">
-					{#each contacts as { contactContent, contactType, icon }}
-						{@const protocol = contactType === 'Hotline' ? 'tel' : 'mailto'}
-						{@const href = `${protocol}:${contactContent}`}
-						<div class="flex items-center gap-5 text-sm font-light text-neutral-800">
-							<svelte:component this={icon} class="text-[#06074d]" width="32" height="32" />
-							<p>
-								{contactType}:
-								<a class="font-normal" {href}>
-									{contactContent}
-								</a>
-							</p>
-						</div>
-					{/each}
-				</div>
-				<div class="flex flex-col gap-2">
-					<div class="flex items-center gap-1">
-						{#each mediaChannels as { href, icon }}
-							<a {href}>
-								<svelte:component this={icon} class="text-[#06074d]" width="28" height="28" />
-							</a>
 						{/each}
 					</div>
-					<p class="text-sm font-light text-neutral-800">Copyright © 2020 ILO Vietnam</p>
+				</div>
+				<div
+					class="flex flex-col gap-5 border-t border-[#afb2b4] pt-5 lg:flex-row lg:justify-between"
+				>
+					<div class="flex flex-col gap-1 lg:flex-row lg:gap-5">
+						{#each contacts as { contactContent, contactType, icon }}
+							{@const protocol = contactType === 'Hotline' ? 'tel' : 'mailto'}
+							{@const href = `${protocol}:${contactContent}`}
+							<div class="flex items-center gap-5 text-sm font-light text-neutral-800">
+								<svelte:component this={icon} class="text-[#06074d]" width="32" height="32" />
+								<p>
+									{contactType}:
+									<a class="font-normal" {href}>
+										{contactContent}
+									</a>
+								</p>
+							</div>
+						{/each}
+					</div>
+					<div class="flex flex-col gap-2">
+						<div class="flex items-center gap-1 lg:justify-end">
+							{#each mediaChannels as { href, icon }}
+								<a {href}>
+									<svelte:component this={icon} class="text-[#06074d]" width="28" height="28" />
+								</a>
+							{/each}
+						</div>
+						<p class="text-sm font-light text-neutral-800">Copyright © 2020 ILO Vietnam</p>
+					</div>
 				</div>
 			</div>
 		</div>

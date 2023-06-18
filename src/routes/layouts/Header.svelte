@@ -6,7 +6,7 @@
 		opened = !opened
 	}
 
-	const headerNavs: { content: string; href: string; hash: string }[] = [
+	const headerNavs: { content: string; href: string }[] = [
 		{ content: 'Nền Tảng Giáo Dục', href: '/' },
 		{ content: 'Một ngày tuyệt vời tại ILO', href: '#programmes' },
 		{ content: 'Vì sao chọn ILO', href: '#about' }
@@ -17,7 +17,6 @@
 	$: {
 		if (isDesktop) {
 			opened = true
-			console.log({ innerWidth })
 		}
 	}
 </script>

@@ -2,7 +2,7 @@
 	import { TrialForm } from '$lib'
 </script>
 
-<section id="hero" class="relative flex w-full flex-col bg-[#f9f9f9] lg:flex-row">
+<section id="hero" class=" flex w-full flex-col bg-[#f9f9f9] lg:flex-row">
 	<div class="max-h-[840px] w-full">
 		<figure>
 			<img
@@ -12,7 +12,9 @@
 			/>
 		</figure>
 	</div>
-	<div class="py-4">
-		<TrialForm id="registerForm" />
+	<div class="relative w-full bg-white py-4">
+		<div class="absolute bottom-0 right-0 w-full max-w-[490px]">
+			<TrialForm id="registerForm" />
+		</div>
 	</div>
 </section>

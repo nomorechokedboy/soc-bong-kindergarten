@@ -1,20 +1,20 @@
 <script context="module" lang="ts">
-	export type ScheduleData = { timeRange: string; activities: string[] };
+	export type ScheduleData = { timeRange: string; activities: string[] }
 </script>
 
 <script lang="ts">
-	export let title: string;
-	export let data: ScheduleData[];
+	export let title: string
+	export let data: ScheduleData[]
 </script>
 
-<div class="flex flex-col">
+<div class="flex w-full flex-col">
 	<header class="flex items-center gap-5 bg-[#06074d] pl-5 text-xl font-semibold text-white">
 		<slot name="headerIcon" />
 		<h3 class="uppercase">
 			{title}
 		</h3>
 	</header>
-	<div class="grid grid-cols-3 bg-blue-100 text-sm font-light text-neutral-800">
+	<div class="grid flex-1 grid-cols-3 bg-blue-100 text-sm font-light text-neutral-800">
 		{#each data as { activities, timeRange } (timeRange)}
 			<div class="col-span-1 border-r border-neutral-300 px-7 pb-2 pt-2.5">{timeRange}</div>
 			<div class="col-span-2 flex flex-col px-7 pb-2 pt-2.5">

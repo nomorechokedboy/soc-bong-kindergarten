@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { SectionTitle, Schedule } from '$lib';
-	import type { ScheduleData } from '$lib/components/Schedule/Schedule.svelte';
-	import type { SubTitleProps } from '$lib/components/SectionTitle/SectionTitle.svelte';
-	import SunIcon from '~icons/ph/sun';
-	import CloudSunIcon from '~icons/bi/cloud-sun';
+	import { SectionTitle, Schedule } from '$lib'
+	import type { ScheduleData } from '$lib/components/Schedule/Schedule.svelte'
+	import type { SubTitleProps } from '$lib/components/SectionTitle/SectionTitle.svelte'
+	import SunIcon from '~icons/ph/sun'
+	import CloudSunIcon from '~icons/bi/cloud-sun'
 
 	const subTitles: SubTitleProps[] = [
 		{
@@ -11,7 +11,7 @@
 				'Dựa trên nghiên cứu chuyên sâu về sự phát triển của trẻ, ILO Academy đã thiết kế thời gian biểu một ngày của con đảm bảo sự phát triển cân bằng và toàn diện cả tư duy, kiến thức - thể chất - tâm hồn. '
 		},
 		{ content: 'Và đây là một ngày tuyệt vời ở ngôi trường ILO!' }
-	];
+	]
 	const morningSchedule: ScheduleData[] = [
 		{
 			activities: ['Đón bé', 'Ăn sáng', 'Hoạt động tập thể: trong lớp và ngoài trời'],
@@ -37,7 +37,7 @@
 			activities: ['Giờ ăn trưa'],
 			timeRange: '11:00 – 12:00'
 		}
-	];
+	]
 	const afternoonSchedule: ScheduleData[] = [
 		{
 			activities: ['Nghỉ trưa hoặc đọc sách'],
@@ -59,7 +59,7 @@
 			activities: ['Tổng kết ngày học', 'Giờ đón bé'],
 			timeRange: '16:30 – 17:00'
 		}
-	];
+	]
 </script>
 
 <section class="bg-[#efefef] px-4 py-12">
@@ -75,7 +75,7 @@
 			</video>
 		</div>
 	</div>
-	<div class="flex flex-col gap-4">
+	<div class="flex flex-col gap-4 lg:flex-row">
 		<Schedule data={morningSchedule} title="Buổi sáng">
 			<SunIcon width="72" height="70" slot="headerIcon" />
 		</Schedule>

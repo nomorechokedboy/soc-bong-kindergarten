@@ -38,8 +38,8 @@
 </script>
 
 <section class="py-12">
-	<div class="flex flex-col gap-8 px-4">
-		<div class="flex flex-col gap-10 bg-blue-100 p-10">
+	<div class="flex flex-col gap-8 px-4 lg:flex-row">
+		<div class="flex flex-1 flex-col gap-10 bg-blue-100 p-10">
 			<h2 class="text-center text-2xl font-extrabold uppercase text-indigo-950">
 				Câu hỏi thường gặp
 			</h2>
@@ -64,6 +64,8 @@
 				{/each}
 			</div>
 		</div>
-		<TrialForm class="!bg-blue-100" />
+		<div class="max-w-[490px]">
+			<TrialForm class="!bg-blue-100" />
+		</div>
 	</div>
 </section>
