@@ -2,7 +2,10 @@
 	import { Button } from '$lib'
 </script>
 
-<div class="flex w-full flex-col items-center gap-8 bg-white px-9 py-5 lg:absolute {$$props.class}">
+<div
+	class="flex w-full flex-col items-center gap-8 bg-white px-9 py-5 lg:absolute {$$props.class}"
+	id={$$props.id}
+>
 	<h3 class="w-full text-center text-lg font-extrabold uppercase text-indigo-950">
 		ĐĂNG KÝ TRẢI NGHIỆM
 		<br />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TrialForm } from '$lib';
+	import { TrialForm } from '$lib'
 </script>
 
 <section id="hero" class="relative flex w-full flex-col bg-[#f9f9f9] lg:flex-row">
@@ -13,6 +13,6 @@
 		</figure>
 	</div>
 	<div class="py-4">
-		<TrialForm />
+		<TrialForm id="registerForm" />
 	</div>
 </section>

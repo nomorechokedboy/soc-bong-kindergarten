@@ -9,10 +9,42 @@
 	import '@fontsource/montserrat/vietnamese-900.css'
 	import Footer from './layouts/Footer.svelte'
 	import Header from './layouts/Header.svelte'
+	import { fade } from 'svelte/transition'
+
+	const showOnPx = 150
+	let hidden = true
+
+	function scrollContainer() {
+		return document.documentElement || document.body
+	}
+
+	function handleOnScroll() {
+		if (!scrollContainer()) {
+			return
+		}
+
+		if (scrollContainer().scrollTop > showOnPx) {
+			hidden = false
+		} else {
+			hidden = true
+		}
+	}
 </script>
+
+<svelte:window on:scroll={handleOnScroll} />
 
 <div class="grid place-items-center">
 	<div class="relative flex h-full min-h-screen w-full max-w-screen-2xl flex-col md:px-10 lg:p-0">
+		{#if !hidden}
+			<div class="fixed bottom-5 right-1 px-2.5 py-1" transition:fade>
+				<a href="#registerForm">
+					<img
+						src="https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/CTA.png"
+						alt="Register button"
+					/>
+				</a>
+			</div>
+		{/if}
 		<slot name="header">
 			<Header />
 		</slot>
