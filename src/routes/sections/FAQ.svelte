@@ -48,7 +48,7 @@
 					<QuestionAndAnswer let:click={handleQuestionClick}>
 						<button class="mb-2 flex gap-5" on:click={handleQuestionClick}>
 							<CaretDownIcon class="flex-shrink-0 flex-grow-0" width="28" height="28" />
-							<span class="text-left text-base font-semibold text-neutral-700">
+							<span class="text-left text-base font-semibold text-neutral-700 lg:text-xl">
 								{question}
 							</span>
 						</button>

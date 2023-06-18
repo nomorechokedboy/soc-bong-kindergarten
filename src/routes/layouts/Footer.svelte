@@ -39,7 +39,7 @@
 	]
 </script>
 
-<footer class="flex flex-col bg-[#efefef] py-12">
+<footer class="flex flex-col bg-[#efefef] py-12 text-sm">
 	<section class="mx-auto w-full max-w-screen-2xl px-4">
 		<div class="flex flex-col justify-center lg:flex-row lg:gap-[150px]">
 			<div class="grid place-items-center lg:place-items-start">
@@ -66,7 +66,7 @@
 									width="35"
 									height="35"
 								/>
-								<div class="flex flex-col gap-1 text-left text-sm text-neutral-700">
+								<div class="flex flex-col gap-1 text-left text-neutral-700">
 									<p class="font-semibold uppercase">
 										{location}
 									</p>
@@ -85,7 +85,7 @@
 						{#each contacts as { contactContent, contactType, icon }}
 							{@const protocol = contactType === 'Hotline' ? 'tel' : 'mailto'}
 							{@const href = `${protocol}:${contactContent}`}
-							<div class="flex items-center gap-5 text-sm font-light text-neutral-800">
+							<div class="flex items-center gap-5 font-light text-neutral-800 lg:items-end">
 								<svelte:component this={icon} class="text-[#06074d]" width="32" height="32" />
 								<p>
 									{contactType}:
@@ -104,7 +104,7 @@
 								</a>
 							{/each}
 						</div>
-						<p class="text-sm font-light text-neutral-800">Copyright © 2020 ILO Vietnam</p>
+						<p class=" font-light text-neutral-800">Copyright © 2020 ILO Vietnam</p>
 					</div>
 				</div>
 			</div>
