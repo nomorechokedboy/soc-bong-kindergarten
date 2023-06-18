@@ -7,9 +7,9 @@
 	}
 
 	const headerNavs: { content: string; href: string }[] = [
-		{ content: 'Nền Tảng Giáo Dục', href: '/' },
-		{ content: 'Một ngày tuyệt vời tại ILO', href: '#programmes' },
-		{ content: 'Vì sao chọn ILO', href: '#about' }
+		{ content: 'Nền Tảng Giáo Dục', href: '#foundation' },
+		{ content: 'Một ngày tuyệt vời tại ILO', href: '#aDayAtOurSchool' },
+		{ content: 'Vì sao chọn ILO', href: '#why' }
 	]
 	let opened = false
 	let innerWidth = 0
@@ -23,7 +23,9 @@
 
 <svelte:window bind:innerWidth />
 <header>
-	<div class="grid grid-cols-2 items-center gap-3.5 px-4 py-2.5 lg:grid-cols-7">
+	<div
+		class="grid grid-cols-2 items-center gap-3.5 px-4 py-2.5 lg:mx-auto lg:max-w-screen-2xl lg:grid-cols-7"
+	>
 		<div>
 			<img
 				class="max-h-[100px] lg:max-h-none"
@@ -41,7 +43,7 @@
 					transition:slide
 				>
 					{#each headerNavs as { content, href } (content)}
-						<li class="w-full py-2 text-center lg:w-auto lg:px-7">
+						<li class="w-full py-2 text-center hover:text-[#4aadb5] lg:w-auto lg:px-7">
 							<a {href}>
 								{content}
 							</a>

@@ -34,9 +34,11 @@
 	]
 </script>
 
-<section class="bg-[#efefef] py-12">
-	<div class="flex flex-col gap-5 px-4">
-		<h2 class="text-center text-base font-extrabold text-indigo-950">VÌ SAO CHỌN ILO</h2>
+<section class="bg-[#efefef] py-12" id="why">
+	<div class="mx-auto flex max-w-screen-2xl flex-col gap-5 px-4">
+		<h2 class="text-center text-base font-extrabold text-indigo-950 lg:text-[42px]/10">
+			VÌ SAO CHỌN ILO
+		</h2>
 		<div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
 			{#each reasons as { content, title, alt, src }}
 				<Reason {content} {title} {alt} {src} />

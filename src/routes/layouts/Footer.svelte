@@ -40,7 +40,7 @@
 </script>
 
 <footer class="flex flex-col bg-[#efefef] py-12">
-	<section class="px-4">
+	<section class="mx-auto w-full max-w-screen-2xl px-4">
 		<div class="flex flex-col justify-center lg:flex-row lg:gap-[150px]">
 			<div class="grid place-items-center lg:place-items-start">
 				<a href="/">
@@ -81,7 +81,7 @@
 				<div
 					class="flex flex-col gap-5 border-t border-[#afb2b4] pt-5 lg:flex-row lg:justify-between"
 				>
-					<div class="flex flex-col gap-1 lg:flex-row lg:gap-5">
+					<div class="flex flex-col gap-1 md:flex-row md:gap-5">
 						{#each contacts as { contactContent, contactType, icon }}
 							{@const protocol = contactType === 'Hotline' ? 'tel' : 'mailto'}
 							{@const href = `${protocol}:${contactContent}`}

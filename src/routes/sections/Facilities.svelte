@@ -64,7 +64,7 @@
 </script>
 
 <section class="py-12">
-	<div class="flex flex-col gap-5 px-4">
+	<div class="mx-auto flex max-w-screen-2xl flex-col gap-5 px-4">
 		<SectionTitle title="CƠ SỞ VẬT CHẤT ILO" {subTitles} />
 		<div
 			class="overflow-hidden"

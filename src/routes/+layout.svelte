@@ -34,9 +34,9 @@
 <svelte:window on:scroll={handleOnScroll} />
 
 <div class="grid place-items-center">
-	<div class="relative flex h-full min-h-screen w-full max-w-screen-2xl flex-col md:px-10 lg:p-0">
+	<div class="relative flex h-full min-h-screen w-full flex-col md:px-10 lg:p-0">
 		{#if !hidden}
-			<div class="fixed bottom-5 right-1 px-2.5 py-1" transition:fade>
+			<div class="fixed bottom-5 right-1 z-10 px-2.5 py-1" transition:fade>
 				<a href="#registerForm">
 					<img
 						src="https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/CTA.png"

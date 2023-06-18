@@ -6,11 +6,11 @@
 	class="flex w-full flex-col items-center gap-8 bg-white px-9 py-5 lg:px-[60px] lg:py-10 {$$props.class}"
 	id={$$props.id}
 >
-	<h3 class="w-full text-center text-lg font-extrabold uppercase text-indigo-950 md:text-2xl">
+	<h2 class="w-full text-center text-lg font-extrabold uppercase text-indigo-950 lg:text-2xl">
 		ĐĂNG KÝ TRẢI NGHIỆM
 		<br />
 		LỚP HỌC THỬ
-	</h3>
+	</h2>
 	<form action="" class="flex w-full flex-col gap-9">
 		<input class="px-2.5 py-1" type="text" placeholder="Họ và tên Phụ Huynh" />
 		<input class="px-2.5 py-1" type="text" placeholder="Số điện thoại" />

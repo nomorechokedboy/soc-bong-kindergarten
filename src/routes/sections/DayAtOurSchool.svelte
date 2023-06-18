@@ -62,25 +62,27 @@
 	]
 </script>
 
-<section class="bg-[#efefef] px-4 py-12">
-	<div class="mb-7 flex flex-col gap-5">
-		<SectionTitle title="MỘT NGÀY TUYỆT VỜI TẠI ILO" {subTitles} />
-		<div class="w-full">
-			<video controls>
-				<track kind="captions" default />
-				<source
-					src="https://ilo.edu.vn/storage/app/media/giaoducmamnon/video/ILO-videos.mp4"
-					type="video/mp4"
-				/>
-			</video>
+<section class="bg-[#efefef] py-12" id="aDayAtOurSchool">
+	<div class="mx-auto max-w-screen-2xl px-4">
+		<div class="mb-7 flex flex-col gap-5">
+			<SectionTitle title="MỘT NGÀY TUYỆT VỜI TẠI ILO" {subTitles} />
+			<div class="w-full">
+				<video controls>
+					<track kind="captions" default />
+					<source
+						src="https://ilo.edu.vn/storage/app/media/giaoducmamnon/video/ILO-videos.mp4"
+						type="video/mp4"
+					/>
+				</video>
+			</div>
 		</div>
-	</div>
-	<div class="flex flex-col gap-4 lg:flex-row">
-		<Schedule data={morningSchedule} title="Buổi sáng">
-			<SunIcon width="72" height="70" slot="headerIcon" />
-		</Schedule>
-		<Schedule data={afternoonSchedule} title="Buổi chiều">
-			<CloudSunIcon width="88" height="70" slot="headerIcon" />
-		</Schedule>
+		<div class="flex flex-col gap-4 lg:flex-row">
+			<Schedule data={morningSchedule} title="Buổi sáng">
+				<SunIcon width="72" height="70" slot="headerIcon" />
+			</Schedule>
+			<Schedule data={afternoonSchedule} title="Buổi chiều">
+				<CloudSunIcon width="88" height="70" slot="headerIcon" />
+			</Schedule>
+		</div>
 	</div>
 </section>
