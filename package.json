@@ -17,6 +17,8 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.6.5",
 		"@commitlint/config-conventional": "^17.6.5",
+		"@fontsource/montserrat": "^5.0.3",
+		"@iconify/json": "^2.2.73",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
@@ -32,12 +34,14 @@
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
+		"prettier-plugin-tailwindcss": "^0.3.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"svelte-preprocess": "^5.0.3",
 		"tailwindcss": "^3.3.1",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
+		"unplugin-icons": "^0.16.2",
 		"vite": "^4.3.0",
 		"vitest": "^0.25.3"
 	},
@@ -50,5 +54,10 @@
 			"prettier --write",
 			"eslint --fix"
 		]
+	},
+	"dependencies": {
+		"embla-carousel-autoplay": "8.0.0-rc07",
+		"embla-carousel-svelte": "8.0.0-rc07",
+		"svelte-markdown": "^0.2.3"
 	}
 }
