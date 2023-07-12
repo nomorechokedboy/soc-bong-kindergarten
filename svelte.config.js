@@ -6,6 +6,9 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
+	alias: {
+		'@storyblok/svelte': './node_modules/@storyblok/svelte',
+	},
 	preprocess: [vitePreprocess(), preprocess({
         postcss: true
     })],
