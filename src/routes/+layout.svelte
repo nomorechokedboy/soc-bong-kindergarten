@@ -10,7 +10,8 @@
 	import Footer from './layouts/Footer.svelte'
 	import Header from './layouts/Header.svelte'
 	import { fade } from 'svelte/transition'
-
+	import type { LayoutData } from './$types'
+	// export let data: LayoutData;
 	const showOnPx = 150
 	let hidden = true
 

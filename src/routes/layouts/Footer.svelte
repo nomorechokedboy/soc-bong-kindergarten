@@ -5,29 +5,30 @@
 	import FacebookIcon from '~icons/circum/facebook'
 	import YoutubeIcon from '~icons/circum/youtube'
 	import InstagramIcon from '~icons/circum/instagram'
+	import { page } from '$app/stores'
 
-	type Location = { location: string; address: string }
-	const locations: Location[] = [
-		{ address: '52 Đặng Dung, phường Tân Định, quận 1, TP.HCM', location: 'ILO ACADEMY qUẬN 1' },
-		{
-			address: '380 Nguyễn Văn Lượng, phường 16, quận Gò Vấp, TP.HCM',
-			location: 'ILO ACADEMY Gò Vấp'
-		},
-		{
-			address: '22A - 24 Thoại Ngọc Hầu, phường Hòa Thạnh, quận Tân Phú, Tp.HCM',
-			location: 'ILO ACADEMY Tân pHÚ'
-		},
-		{
-			address:
-				'Block A, tầng trệt & tầng 1, chung cư Saigon South Residences, Nguyễn Hữu Thọ, Nhà Bè, TP.HCM',
-			location: 'ILO ACADEMY Nam Sài Gòn'
-		},
-		{
-			address:
-				'BlockSố 65/3 đường Hoàng Hoa Thám, Khu 8, phường Hiệp Thành, Thành phố Thủ Dầu Một, tỉnh Bình Dương',
-			location: 'ILO Bình Dương '
-		}
-	]
+	// type Location = { location: string; address: string }
+	// const locations: Location[] = [
+	// 	{ address: '52 Đặng Dung, phường Tân Định, quận 1, TP.HCM', location: 'ILO ACADEMY qUẬN 1' },
+	// 	{
+	// 		address: '380 Nguyễn Văn Lượng, phường 16, quận Gò Vấp, TP.HCM',
+	// 		location: 'ILO ACADEMY Gò Vấp'
+	// 	},
+	// 	{
+	// 		address: '22A - 24 Thoại Ngọc Hầu, phường Hòa Thạnh, quận Tân Phú, Tp.HCM',
+	// 		location: 'ILO ACADEMY Tân Phú'
+	// 	},
+	// 	{
+	// 		address:
+	// 			'Block A, tầng trệt & tầng 1, chung cư Saigon South Residences, Nguyễn Hữu Thọ, Nhà Bè, TP.HCM',
+	// 		location: 'ILO ACADEMY Nam Sài Gòn'
+	// 	},
+	// 	{
+	// 		address:
+	// 			'BlockSố 65/3 đường Hoàng Hoa Thám, Khu 8, phường Hiệp Thành, Thành phố Thủ Dầu Một, tỉnh Bình Dương',
+	// 		location: 'ILO Bình Dương '
+	// 	}
+	// ]
 	const contacts = [
 		{ icon: PhoneIcon, contactContent: '090 695 4388', contactType: 'Hotline' },
 		{ icon: EmailIcon, contactContent: 'info@ilo.edu.vn', contactType: 'Email' }
@@ -44,13 +45,17 @@
 		<div class="flex flex-col justify-center lg:flex-row lg:gap-[150px]">
 			<div class="grid place-items-center lg:place-items-start">
 				<a href="/">
-					<img
-						class="w-20 lg:w-auto"
-						width="212"
-						height="237"
-						src="https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/logo-footer.webp"
-						alt="footer logo"
-					/>
+					{#each $page.data.footer as blok}
+						{#if blok.component == 'logo' && blok.length !== 0}
+							<img
+								class="w-20 lg:w-auto"
+								width="212"
+								height="237"
+								src={blok.logo?.filename}
+								alt={blok.logo?.alt}
+							/>
+						{/if}
+					{/each}
 				</a>
 			</div>
 			<div class="flex flex-1 flex-col">
@@ -58,25 +63,29 @@
 					<h2 class="text-center text-2xl font-semibold uppercase text-indigo-950 lg:text-left">
 						HỆ THỐNG MẦM NON ilo academy
 					</h2>
-					<div class="flex flex-col gap-4">
-						{#each locations as { address, location }}
-							<div class="flex gap-5">
-								<LocationIcon
-									class="flex-shrink-0 flex-grow-0 text-[#06074d]"
-									width="35"
-									height="35"
-								/>
-								<div class="flex flex-col gap-1 text-left text-neutral-700">
-									<p class="font-semibold uppercase">
-										{location}
-									</p>
-									<p class="font-light">
-										{address}
-									</p>
-								</div>
-							</div>
-						{/each}
-					</div>
+					{#if $page.data.footer && $page.data.footer?.length !== 0}
+						<div class="flex flex-col gap-4">
+							{#each $page.data.footer as blok}
+								{#if blok.component == 'location'}
+									<div class="flex gap-5">
+										<LocationIcon
+											class="flex-shrink-0 flex-grow-0 text-[#06074d]"
+											width="35"
+											height="35"
+										/>
+										<div class="flex flex-col gap-1 text-left text-neutral-700">
+											<p class="font-semibold uppercase">
+												{blok?.school_name}
+											</p>
+											<p class="font-light">
+												{blok?.school_location}
+											</p>
+										</div>
+									</div>
+								{/if}
+							{/each}
+						</div>
+					{/if}
 				</div>
 				<div
 					class="flex flex-col gap-5 border-t border-[#afb2b4] pt-5 lg:flex-row lg:justify-between"
