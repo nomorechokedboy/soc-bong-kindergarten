@@ -1,7 +1,9 @@
 <script lang="ts">
+	import Burger from '$lib/components/Burger.svelte'
 	import { slide } from 'svelte/transition'
 	import { Button } from '$lib'
 	import { page } from '$app/stores'
+
 	function handleToggleNav() {
 		opened = !opened
 	}
@@ -33,7 +35,7 @@
 			{/each}
 		</div>
 		<div class="flex justify-end lg:hidden">
-			<button class="h-[34px] w-[34px] bg-red-500" on:click={handleToggleNav} />
+			<Burger {opened} onClick={handleToggleNav} />
 		</div>
 		<div class="col-span-full lg:col-span-6">
 			{#if opened}
