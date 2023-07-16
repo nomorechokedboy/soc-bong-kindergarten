@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export type ScheduleData = { timeRange: string; activities: string[] }
+	export type ScheduleData = { timeRange: string; activities: [{ text: string }] }
 </script>
 
 <script lang="ts">
@@ -9,7 +9,11 @@
 
 <div class="flex w-full flex-col">
 	<header class="flex items-center gap-5 bg-[#06074d] pl-5 text-xl font-semibold text-white">
-		<slot name="headerIcon" />
+		{#if title == 'Buổi Sáng'}
+			<slot name="sunIcon" />
+		{:else}
+			<slot name="cloudSunIcon" />
+		{/if}
 		<h3 class="uppercase">
 			{title}
 		</h3>
@@ -20,7 +24,7 @@
 			<div class="col-span-2 flex flex-col px-7 pb-2 pt-2.5">
 				{#each activities as activity}
 					<div class="mb-[5px]">
-						{activity}
+						{activity?.text}
 					</div>
 				{/each}
 			</div>
