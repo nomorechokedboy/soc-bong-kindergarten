@@ -3,45 +3,46 @@
 	import type { SubTitleProps } from '$lib/components/SectionTitle/SectionTitle.svelte'
 	import emblaCarouselSvelte, { type EmblaCarouselType } from 'embla-carousel-svelte'
 	import Autoplay from 'embla-carousel-autoplay'
-
-	const subTitles: SubTitleProps[] = [
-		{
-			content:
-				'Tuổi thơ chính là giai đoạn quan trọng nhất trong quá trình phát triển của một con người. Hiểu được điều đó, ILO đã tập trung xây dựng một môi trường học trong lành và thân thiện dành cho con để mỗi ngày tới trường đều là một ngày tràn đầy niềm vui và hạnh phúc. '
-		}
-	]
-	const images: { src: string; alt: string; caption: string }[] = [
-		{
-			src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc01.webp',
-			alt: '',
-			caption: 'Sân chơi chính'
-		},
-		{
-			src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc02.webp',
-			alt: '',
-			caption: 'Sân chơi thể thao'
-		},
-		{
-			src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc03.webp',
-			alt: '',
-			caption: 'Khu vực học tập'
-		},
-		{
-			src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc04.webp',
-			alt: '',
-			caption: 'Khu vườn ILO'
-		},
-		{
-			src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc05.webp',
-			alt: '',
-			caption: 'Khu vườn ILO'
-		},
-		{
-			src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc06.webp',
-			alt: '',
-			caption: 'Phòng tưởng tượng'
-		}
-	]
+	import { storyblokEditable, StoryblokComponent } from '@storyblok/svelte'
+	export let blok: StoryblokComponent
+	// const subTitle: SubTitleProps[] = [
+	// 	{
+	// 		content:
+	// 			'Tuổi thơ chính là giai đoạn quan trọng nhất trong quá trình phát triển của một con người. Hiểu được điều đó, ILO đã tập trung xây dựng một môi trường học trong lành và thân thiện dành cho con để mỗi ngày tới trường đều là một ngày tràn đầy niềm vui và hạnh phúc. '
+	// 	}
+	// ]
+	// const images: { src: string; alt: string; caption: string }[] = [
+	// 	{
+	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc01.webp',
+	// 		alt: '',
+	// 		caption: 'Sân chơi chính'
+	// 	},
+	// 	{
+	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc02.webp',
+	// 		alt: '',
+	// 		caption: 'Sân chơi thể thao'
+	// 	},
+	// 	{
+	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc03.webp',
+	// 		alt: '',
+	// 		caption: 'Khu vực học tập'
+	// 	},
+	// 	{
+	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc04.webp',
+	// 		alt: '',
+	// 		caption: 'Khu vườn ILO'
+	// 	},
+	// 	{
+	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc05.webp',
+	// 		alt: '',
+	// 		caption: 'Khu vườn ILO'
+	// 	},
+	// 	{
+	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc06.webp',
+	// 		alt: '',
+	// 		caption: 'Phòng tưởng tượng'
+	// 	}
+	// ]
 	let emblaApi: any
 	let options = { loop: true }
 	let plugins = [Autoplay({ delay: 2000, stopOnInteraction: false })]
@@ -63,23 +64,25 @@
 	}
 </script>
 
-<section class="py-12">
+<section class="py-12" use:storyblokEditable={blok}>
 	<div class="mx-auto flex max-w-screen-2xl flex-col gap-5 px-4">
-		<SectionTitle title="CƠ SỞ VẬT CHẤT ILO" {subTitles} />
+		{#each blok.title as { title, subTitle }}
+			<SectionTitle {title} {subTitle} />
+		{/each}
 		<div
 			class="overflow-hidden"
 			use:emblaCarouselSvelte={{ options, plugins }}
 			on:emblaInit={onInit}
 		>
 			<div class="flex items-center">
-				{#each images as { src, alt, caption }}
+				{#each blok.img_carousel as { filename, alt, title }}
 					<figure class="relative min-w-0 flex-[0_0_100%]">
-						<img {src} {alt} />
+						<img src={filename} {alt} />
 						<figcaption
 							class="absolute bottom-5 right-0 rounded-l-3xl bg-[rgba(6,7,77,0.7)] px-9 py-2"
 						>
 							<p class="text-sm text-white">
-								{caption}
+								{title}
 							</p>
 						</figcaption>
 					</figure>
