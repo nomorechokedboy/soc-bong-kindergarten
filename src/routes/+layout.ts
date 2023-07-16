@@ -13,10 +13,11 @@ import DayAtOurSchool from './sections/DayAtOurSchool.svelte'
 import Facilities from './sections/Facilities.svelte'
 import WhyChooseUs from './sections/WhyChooseUs.svelte'
 import FAQ from './sections/FAQ.svelte'
+import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
 /** @type {import('./$types').LayoutLoad} */
 export async function load() {
 	storyblokInit({
-		accessToken: 'kqK25jMVNSiNcoqpaJDrNQtt',
+		accessToken: PUBLIC_ACCESS_TOKEN,
 		use: [apiPlugin],
 		components: {
 			page: Page,
