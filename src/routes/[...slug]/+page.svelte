@@ -1,10 +1,10 @@
 <!-- <script lang="ts">
-	import Banner from './sections/Banner.svelte'
-	import DayAtOurSchool from './sections/DayAtOurSchool.svelte'
-	import Facilities from './sections/Facilities.svelte'
-	import Foundation from './sections/Foundation.svelte'
-	import WhyChooseUs from './sections/WhyChooseUs.svelte'
-	import FAQ from './sections/FAQ.svelte'
+	import Banner from '../sections/Banner.svelte'
+	import DayAtOurSchool from '../sections/DayAtOurSchool.svelte'
+	import Facilities from '../sections/Facilities.svelte'
+	import Foundation from '../sections/Foundation.svelte'
+	import WhyChooseUs from '../sections/WhyChooseUs.svelte'
+	import FAQ from '../sections/FAQ.svelte'
 </script>
 
 <div class="h-full w-full">
@@ -20,7 +20,6 @@
 	import { onMount } from 'svelte'
 	import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte'
 	import type { PageData } from './$types'
-
 	export let data: PageData
 
 	$: ({ story } = data)
@@ -28,15 +27,11 @@
 		if (story) {
 			useStoryblokBridge(story.id, (newStory) => (story = newStory))
 		}
-		console.log(story)
 	})
 </script>
 
-<!-- <svelte:head>
-    <title>{data.story.name}</title>
-</svelte:head> -->
 {#key story}
-	<div>
+	<div class="h-full w-full">
 		{#if story}
 			<StoryblokComponent blok={story.content} />
 		{/if}

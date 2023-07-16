@@ -4,9 +4,15 @@ import Footer from './layouts/Footer.svelte'
 import Header from './layouts/Header.svelte'
 import TrialForm from '$lib/components/TrialForm/TrialForm.svelte'
 import Banner from './sections/Banner.svelte'
-import FormInput from '$lib/components/FormInput/formInput.svelte'
+import FormInput from '$lib/components/FormInput/FormInput.svelte'
 import Title from '$lib/components/Title/Title.svelte'
 import FormDropdown from '$lib/components/FormDropdown/FormDropdown.svelte'
+import Foundation from './sections/Foundation.svelte'
+import SectionTitle from '$lib/components/SectionTitle/SectionTitle.svelte'
+import DayAtOurSchool from './sections/DayAtOurSchool.svelte'
+import Facilities from './sections/Facilities.svelte'
+import WhyChooseUs from './sections/WhyChooseUs.svelte'
+import FAQ from './sections/FAQ.svelte'
 /** @type {import('./$types').LayoutLoad} */
 export async function load() {
 	storyblokInit({
@@ -20,7 +26,13 @@ export async function load() {
 			formDropdown: FormDropdown,
 			banner: Banner,
 			formInput: FormInput,
-			title: Title
+			title: Title,
+			foundation: Foundation,
+			sectionTitle: SectionTitle,
+			aDayAtOurSchool: DayAtOurSchool,
+			facilities: Facilities,
+			whyChooseUs: WhyChooseUs,
+			FAQs: FAQ
 		},
 		apiOptions: {
 			region: '',
