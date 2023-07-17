@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Button } from '$lib'
-	import { StoryblokComponent, storyblokEditable } from '@storyblok/svelte'
+	import { storyblokEditable } from '@storyblok/svelte'
 	import FormInput from '../FormInput/FormInput.svelte'
 	import FormDropdown from '../FormDropdown/FormDropdown.svelte'
-	// import {storyblokEditable, type StoryblokComponent} from '@storyblok/svelte';
+
 	$: data = $$props.blok
 </script>
 
@@ -40,22 +40,3 @@
 		</form>
 	</div>
 {/if}
-
-<!-- <input class="px-2.5 py-1" type="text" placeholder="Họ và tên Phụ Huynh" />
-		<input class="px-2.5 py-1" type="number" placeholder="Số điện thoại" />
-		<select name="cars" id="cars">
-			{#each data.dropdown_menu as name, i}
-				<option value="{i}">{name}</option>
-			{/each}
-		</select>	
-		<select name="cars" id="cars">
-			{#each data.dropdown_menu as name, number}
-				<option value="{number}">{name}</option>
-			{/each}
-		</select>
-		<select name="cars" id="cars">
-			<option value="volvo">Volvo</option>
-			<option value="saab">Saab</option>
-			<option value="opel">Opel</option>
-			<option value="audi">Audi</option>
-		</select> -->

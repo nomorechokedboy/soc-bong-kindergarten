@@ -1,4 +1,4 @@
-import { apiPlugin, storyblokInit, useStoryblokApi, type ISbResult } from '@storyblok/svelte'
+import { apiPlugin, storyblokInit, useStoryblokApi } from '@storyblok/svelte'
 import Page from './layouts/Page.svelte'
 import Footer from './layouts/Footer.svelte'
 import Header from './layouts/Header.svelte'
@@ -14,7 +14,7 @@ import Facilities from './sections/Facilities.svelte'
 import WhyChooseUs from './sections/WhyChooseUs.svelte'
 import FAQ from './sections/FAQ.svelte'
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
-/** @type {import('./$types').LayoutLoad} */
+
 export async function load() {
 	storyblokInit({
 		accessToken: PUBLIC_ACCESS_TOKEN,
@@ -40,18 +40,17 @@ export async function load() {
 			https: true
 		}
 	})
-	const storyblokApi = await useStoryblokApi()
+	const storyblokApi = useStoryblokApi()
 
-	const dataConfig: ISbResult = await storyblokApi.get('cdn/stories/config/', {
+	const dataConfig = await storyblokApi.get('cdn/stories/config/', {
 		version: 'draft',
 		resolve_links: 'url'
 	})
-
-	// console.log('dataConfig', dataConfig.data.story.content);
-
-	return {
+	const data = {
 		storyblokApi: storyblokApi,
 		header: dataConfig.data.story.content.header_menu,
 		footer: dataConfig.data.story.content.footer_list
 	}
+
+	return data
 }

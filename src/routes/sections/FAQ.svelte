@@ -4,37 +4,8 @@
 	import { storyblokEditable, StoryblokComponent } from '@storyblok/svelte'
 	import SvelteMarkdown from 'svelte-markdown'
 	import { slide } from 'svelte/transition'
-	export let blok: StoryblokComponent
-	// type FAQContent = { answers: string[]; question: string }
 
-	// const FAQs: FAQContent[] = [
-	// 	{
-	// 		answers: [
-	// 			'Điều đặc biệt của Giáo Dục Phần Lan là trẻ em không phải chịu nhiều áp lực học tập, thi cử và bài tập về nhà. Thay vào đó, các con được thoải mái học tập, vui chơi và tham gia nhiều hoạt động đa dạng nhằm phát triển toàn diện các kỹ năng, kiến thức. Vì thế, Giáo Dục Phần Lan còn được biết đến với tên gọi “Giáo Dục Hạnh Phúc”.'
-	// 		],
-	// 		question: 'Giáo dục Phần Lan có lợi ích gì đối với bé?'
-	// 	},
-	// 	{
-	// 		answers: [
-	// 			'ILO Academy là sự kết hợp tinh hoa của giáo dục Phần Lan và chương trình giáo dục mầm non Việt Nam cùng theo đó là tài nguyên hoạt động vui chơi từ ILA sau nhiều năm nghiên cứu với đối tượng trẻ em Việt Nam. Ở đây, chúng tôi nhấn mạnh vào việc nuôi dưỡng tính cách và tâm hồn của con với mong muốn khơi dậy niềm đam mê học tập suốt đời ở trẻ.',
-	// 			'Sau quá trình học tập tại ILO Academy, cha mẹ có thể quan sát thấy sự phát triển của con trong 6 lĩnh vực cũng như khả năng vận dụng các kỹ năng mềm thiết yếu trong thế kỷ 21 (Nguyên tắc về 4 chữ C được đề ra bởi Diễn Đàn Kinh Tế Thế Giới:\n\n **Critical thinking** - Tư duy phản biện,\n\n **Creative** - Sáng tạo,\n\n **Communication** - Giao tiếp và **Collaboration** - Hợp tác)'
-	// 		],
-	// 		question: 'Chương trình mầm non tại ILO Academy có gì đặc biệt?'
-	// 	},
-	// 	{
-	// 		answers: [
-	// 			'ILO nhận các bé từ 18 tháng đến 6 tuổi, đây là độ tuổi vàng để các bé phát triển tư duy ngôn ngữ và hoàn thiện các kỹ năng mềm. ',
-	// 			'Chương trình học tiêu chuẩn quốc tế cùng các hoạt động ngoại khoá được thiết kế giúp trẻ trang bị những kỹ năng mềm quan trọng và phát triển các chỉ số thông minh một cách toàn diện ngay từ những năm đầu đời, để trẻ tự tin bước vào môi trường K12 quốc tế và nổi trội hơn bạn bè cùng tuổi khi vào lớp 1. '
-	// 		],
-	// 		question: 'ILO Academy nhận các bé từ mấy tuổi?'
-	// 	},
-	// 	{
-	// 		answers: [
-	// 			'Anh/chị có thể điền thông tin liên hệ của mình vào form bên dưới, phía ILO Academy sẽ liên hệ và đặt lịch hẹn với mình sớm nhất'
-	// 		],
-	// 		question: 'Tôi muốn đăng ký tham quan trường ILO, tôi phải làm như thế nào? '
-	// 	}
-	// ]
+	export let blok: StoryblokComponent
 </script>
 
 <section class="py-12" use:storyblokEditable={blok}>

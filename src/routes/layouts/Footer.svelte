@@ -7,28 +7,6 @@
 	import InstagramIcon from '~icons/circum/instagram'
 	import { page } from '$app/stores'
 
-	// type Location = { location: string; address: string }
-	// const locations: Location[] = [
-	// 	{ address: '52 Đặng Dung, phường Tân Định, quận 1, TP.HCM', location: 'ILO ACADEMY qUẬN 1' },
-	// 	{
-	// 		address: '380 Nguyễn Văn Lượng, phường 16, quận Gò Vấp, TP.HCM',
-	// 		location: 'ILO ACADEMY Gò Vấp'
-	// 	},
-	// 	{
-	// 		address: '22A - 24 Thoại Ngọc Hầu, phường Hòa Thạnh, quận Tân Phú, Tp.HCM',
-	// 		location: 'ILO ACADEMY Tân Phú'
-	// 	},
-	// 	{
-	// 		address:
-	// 			'Block A, tầng trệt & tầng 1, chung cư Saigon South Residences, Nguyễn Hữu Thọ, Nhà Bè, TP.HCM',
-	// 		location: 'ILO ACADEMY Nam Sài Gòn'
-	// 	},
-	// 	{
-	// 		address:
-	// 			'BlockSố 65/3 đường Hoàng Hoa Thám, Khu 8, phường Hiệp Thành, Thành phố Thủ Dầu Một, tỉnh Bình Dương',
-	// 		location: 'ILO Bình Dương '
-	// 	}
-	// ]
 	const contacts = [
 		{ icon: PhoneIcon, contactContent: '090 695 4388', contactType: 'Hotline' },
 		{ icon: EmailIcon, contactContent: 'info@ilo.edu.vn', contactType: 'Email' }

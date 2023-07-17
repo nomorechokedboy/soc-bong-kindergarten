@@ -7,11 +7,6 @@
 	function handleToggleNav() {
 		opened = !opened
 	}
-	// const headerNavs: { content: string; href: string }[] = [
-	// 	{ content: 'Nền Tảng Giáo Dục', href: '#foundation' },
-	// 	{ content: 'Một ngày tuyệt vời tại ILO', href: '#aDayAtOurSchool' },
-	// 	{ content: 'Vì sao chọn ILO', href: '#why' }
-	// ]
 	let opened = false
 	let innerWidth = 0
 	$: isDesktop = innerWidth > 1023
