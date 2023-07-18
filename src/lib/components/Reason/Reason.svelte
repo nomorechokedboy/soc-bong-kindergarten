@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { storyblokEditable, StoryblokComponent } from '@storyblok/svelte'
 	import SvelteMarkdown from 'svelte-markdown'
-	// export let src: string
-	// export let alt = ''
-	// export let title: string
-	// export let content: string
+
 	export let blok: StoryblokComponent
 </script>
 

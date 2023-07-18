@@ -1,7 +1,13 @@
 <script lang="ts">
-	import { TrialForm } from '$lib'
+	import { Button } from '$lib'
 	import { storyblokEditable, type StoryblokComponent } from '@storyblok/svelte'
+	import { showForm } from '$lib/stores'
+
 	export let blok: StoryblokComponent
+
+	function handleOpenForm() {
+		$showForm = true
+	}
 </script>
 
 <section
@@ -15,12 +21,8 @@
 				<img class="max-w-full" src={blok.image_banner?.filename} alt={blok.image_banner?.alt} />
 			</figure>
 		</div>
-		<div class="relative w-full bg-white py-4">
-			<div class="mx-auto w-full lg:absolute lg:bottom-0 lg:right-0 lg:mx-0 lg:max-w-[490px]">
-				{#each blok.trialForm as item}
-					<TrialForm id="registerForm" blok={item} />
-				{/each}
-			</div>
+		<div class="relative grid w-full place-items-center py-4">
+			<Button class="font-bold text-white" on:click={handleOpenForm}>Đăng ký ngay</Button>
 		</div>
 	{/if}
 </section>

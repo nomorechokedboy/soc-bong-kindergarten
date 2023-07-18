@@ -1,48 +1,11 @@
 <script lang="ts">
 	import { SectionTitle } from '$lib'
-	import type { SubTitleProps } from '$lib/components/SectionTitle/SectionTitle.svelte'
 	import emblaCarouselSvelte, { type EmblaCarouselType } from 'embla-carousel-svelte'
 	import Autoplay from 'embla-carousel-autoplay'
 	import { storyblokEditable, StoryblokComponent } from '@storyblok/svelte'
+
 	export let blok: StoryblokComponent
-	// const subTitle: SubTitleProps[] = [
-	// 	{
-	// 		content:
-	// 			'Tuổi thơ chính là giai đoạn quan trọng nhất trong quá trình phát triển của một con người. Hiểu được điều đó, ILO đã tập trung xây dựng một môi trường học trong lành và thân thiện dành cho con để mỗi ngày tới trường đều là một ngày tràn đầy niềm vui và hạnh phúc. '
-	// 	}
-	// ]
-	// const images: { src: string; alt: string; caption: string }[] = [
-	// 	{
-	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc01.webp',
-	// 		alt: '',
-	// 		caption: 'Sân chơi chính'
-	// 	},
-	// 	{
-	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc02.webp',
-	// 		alt: '',
-	// 		caption: 'Sân chơi thể thao'
-	// 	},
-	// 	{
-	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc03.webp',
-	// 		alt: '',
-	// 		caption: 'Khu vực học tập'
-	// 	},
-	// 	{
-	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc04.webp',
-	// 		alt: '',
-	// 		caption: 'Khu vườn ILO'
-	// 	},
-	// 	{
-	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc05.webp',
-	// 		alt: '',
-	// 		caption: 'Khu vườn ILO'
-	// 	},
-	// 	{
-	// 		src: 'https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/csvc06.webp',
-	// 		alt: '',
-	// 		caption: 'Phòng tưởng tượng'
-	// 	}
-	// ]
+
 	let emblaApi: any
 	let options = { loop: true }
 	let plugins = [Autoplay({ delay: 2000, stopOnInteraction: false })]
