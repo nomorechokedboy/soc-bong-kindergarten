@@ -3,6 +3,7 @@
 	import { slide } from 'svelte/transition'
 	import { Button } from '$lib'
 	import { page } from '$app/stores'
+	import { showForm } from '$lib/stores'
 
 	function handleToggleNav() {
 		opened = !opened
@@ -14,6 +15,10 @@
 		if (isDesktop) {
 			opened = true
 		}
+	}
+
+	function handleOpenForm() {
+		$showForm = true
 	}
 </script>
 
@@ -49,7 +54,9 @@
 							{/if}
 							{#if i == $page.data.header.length - 1}
 								<li class="flex w-full items-center justify-center lg:w-auto">
-									<Button class="font-bold text-white" fullWidth>Đăng ký tư vấn</Button>
+									<Button class="font-bold text-white" on:click={handleOpenForm} fullWidth
+										>Đăng ký tư vấn</Button
+									>
 								</li>
 							{/if}
 						{/each}
