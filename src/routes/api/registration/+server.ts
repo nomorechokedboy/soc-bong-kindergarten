@@ -10,8 +10,6 @@ export async function POST({ request }: RequestEvent) {
 	}
 
 	const { error: dbErr, status, statusText } = await supabase.from('registrations').insert(body)
-	console.log({ dbErr })
-
 	if (dbErr !== null) {
 		throw error(status, statusText)
 	}
