@@ -75,7 +75,7 @@
 	</div>
 </div>
 {#if $showForm}
-	<div class="fixed inset-0 grid place-items-center">
+	<div class="fixed inset-0 z-50 grid lg:place-items-center">
 		<div
 			class="absolute inset-0 -z-10 bg-black/20 backdrop-blur-sm"
 			on:keydown={() => {
@@ -83,7 +83,7 @@
 			}}
 			on:click={handleCloseForm}
 		/>
-		<div class="h-1/2 w-full max-w-lg bg-white lg:h-auto">
+		<div class="w-full max-w-lg bg-white md:mx-auto lg:mx-0">
 			<div class="flex items-center justify-end">
 				<button class="p-3 active:translate-y-1" on:click={handleCloseForm}>
 					<TimesIcon width={24} height={24} />

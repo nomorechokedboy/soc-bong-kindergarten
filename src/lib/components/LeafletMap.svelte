@@ -43,4 +43,7 @@
 	main div {
 		height: 1080px;
 	}
+	div {
+		z-index: 0;
+	}
 </style>

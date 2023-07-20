@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button, registerSchema } from '$lib'
+	import { showForm } from '$lib/stores'
 	import type { RegisterSchema } from '$lib'
 	import FloatingLabel from './FloatingLabel.svelte'
 	import { createForm } from 'felte'
@@ -20,6 +21,7 @@
 					'content-type': 'application/json'
 				}
 			})
+			$showForm = false
 		} catch (e) {
 			console.error(e)
 		}
