@@ -22,7 +22,9 @@
 			</figure>
 		</div>
 		<div class="relative grid w-full place-items-center py-4">
-			<Button class="font-bold text-white" on:click={handleOpenForm}>Đăng ký ngay</Button>
+			<Button class="font-bold text-white hover:bg-green-800" on:click={handleOpenForm}
+				>Đăng ký ngay</Button
+			>
 		</div>
 	{/if}
 </section>

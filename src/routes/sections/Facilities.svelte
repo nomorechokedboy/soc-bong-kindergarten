@@ -41,10 +41,8 @@
 				{#each blok.img_carousel as { filename, alt, title }}
 					<figure class="relative min-w-0 flex-[0_0_100%]">
 						<img src={filename} {alt} />
-						<figcaption
-							class="absolute bottom-5 right-0 rounded-l-3xl bg-[rgba(6,7,77,0.7)] px-9 py-2"
-						>
-							<p class="text-sm text-white">
+						<figcaption class="absolute bottom-5 right-0 rounded-l-3xl bg-green-600/70 px-9 py-2">
+							<p class="text-sm font-medium text-white">
 								{title}
 							</p>
 						</figcaption>
@@ -69,6 +67,6 @@
 
 <style lang="postcss">
 	.active {
-		@apply before:bg-[#06074d]/70;
+		@apply before:bg-green-600/70;
 	}
 </style>
