@@ -1,6 +1,8 @@
 <script lang="ts">
 	export let variant: 'filled' | 'subtle' = 'filled'
 	export let fullWidth = false
+	export let type: 'button' | 'submit' | 'reset' | undefined = undefined
+	export let disabled: boolean | undefined = undefined
 </script>
 
 <button
@@ -8,6 +10,8 @@
 		? 'w-full'
 		: ''} rounded-sm active:translate-y-1 {$$props.class}"
 	on:click
+	{type}
+	{disabled}
 >
 	<div class="flex items-center justify-center gap-2.5">
 		<slot name="leftIcon" />
