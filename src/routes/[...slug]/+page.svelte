@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte'
 	import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte'
 	import type { PageData } from './$types'
-	import Locations from '$lib/components/Locations/Locations.svelte'
 	export let data: PageData
 
 	$: ({ story } = data)
@@ -18,6 +17,5 @@
 		{#if story}
 			<StoryblokComponent blok={story.content} />
 		{/if}
-		<Locations />
 	</div>
 {/key}
