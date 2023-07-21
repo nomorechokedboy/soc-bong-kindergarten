@@ -41,12 +41,12 @@
 			{#if opened}
 				{#if $page.data.header && $page.data.header?.length !== 0}
 					<ul
-						class="flex flex-col items-center text-black lg:flex-row lg:justify-end"
+						class="flex flex-col items-center text-neutral-700 lg:flex-row lg:justify-end"
 						transition:slide
 					>
 						{#each $page.data.header as blok, i}
 							{#if blok.component == 'menu_link'}
-								<li class="w-full py-2 text-center hover:text-[#4aadb5] lg:w-auto lg:px-7">
+								<li class="w-full py-2 text-center hover:text-green-500 lg:w-auto lg:px-7">
 									<a href={'#' + blok.link?.anchor}>
 										{blok?.name}
 									</a>
@@ -54,8 +54,10 @@
 							{/if}
 							{#if i == $page.data.header.length - 1}
 								<li class="flex w-full items-center justify-center lg:w-auto">
-									<Button class="font-bold text-white" on:click={handleOpenForm} fullWidth
-										>Đăng ký tư vấn</Button
+									<Button
+										class="font-bold text-white hover:bg-green-800"
+										on:click={handleOpenForm}
+										fullWidth>Đăng ký tư vấn</Button
 									>
 								</li>
 							{/if}

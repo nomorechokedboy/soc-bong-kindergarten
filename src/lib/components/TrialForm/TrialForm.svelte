@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button, registerSchema } from '$lib'
+	import { showForm } from '$lib/stores'
 	import type { RegisterSchema } from '$lib'
 	import FloatingLabel from './FloatingLabel.svelte'
 	import { createForm } from 'felte'
@@ -20,6 +21,7 @@
 					'content-type': 'application/json'
 				}
 			})
+			$showForm = false
 		} catch (e) {
 			console.error(e)
 		}
@@ -27,7 +29,7 @@
 </script>
 
 <div
-	class="flex w-full flex-col items-center gap-8 bg-white px-9 py-5 lg:px-[60px] lg:py-10 {$$props.class}"
+	class="flex w-full flex-col items-center gap-4 bg-white px-9 py-5 md:gap-8 lg:px-[60px] lg:py-10 {$$props.class}"
 	id={$$props.id}
 >
 	<h2 class="w-full text-center text-lg font-extrabold uppercase text-green-700 lg:text-2xl">
@@ -35,7 +37,7 @@
 		<br />
 		LỚP HỌC THỬ
 	</h2>
-	<form class="flex w-full flex-col gap-9" use:form>
+	<form class="flex w-full flex-col gap-5" use:form>
 		<FloatingLabel error={$errors.parentName} name="parentName" placeholder="Họ và tên phụ huynh" />
 		<FloatingLabel error={$errors.studentName} name="studentName" placeholder="Họ và tên của bé" />
 		<FloatingLabel error={$errors.phoneNumber} name="phoneNumber" placeholder="Số điện thoại" />

@@ -14,6 +14,7 @@ import Facilities from './sections/Facilities.svelte'
 import WhyChooseUs from './sections/WhyChooseUs.svelte'
 import FAQ from './sections/FAQ.svelte'
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
+import { AgencyLocation, Locations } from '$lib'
 
 export async function load() {
 	storyblokInit({
@@ -33,7 +34,9 @@ export async function load() {
 			aDayAtOurSchool: DayAtOurSchool,
 			facilities: Facilities,
 			whyChooseUs: WhyChooseUs,
-			FAQs: FAQ
+			FAQs: FAQ,
+			Locations,
+			AgencyLocation
 		},
 		apiOptions: {
 			region: '',

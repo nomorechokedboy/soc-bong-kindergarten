@@ -1,12 +1,12 @@
 <script lang="ts">
 	import '../app.css'
-	import '@fontsource/montserrat/vietnamese-300.css'
-	import '@fontsource/montserrat/vietnamese-400.css'
-	import '@fontsource/montserrat/vietnamese-500.css'
-	import '@fontsource/montserrat/vietnamese-600.css'
-	import '@fontsource/montserrat/vietnamese-700.css'
-	import '@fontsource/montserrat/vietnamese-800.css'
-	import '@fontsource/montserrat/vietnamese-900.css'
+	import '@fontsource/montserrat/300.css'
+	import '@fontsource/montserrat/400.css'
+	import '@fontsource/montserrat/500.css'
+	import '@fontsource/montserrat/600.css'
+	import '@fontsource/montserrat/700.css'
+	import '@fontsource/montserrat/800.css'
+	import '@fontsource/montserrat/900.css'
 	import Footer from './layouts/Footer.svelte'
 	import Header from './layouts/Header.svelte'
 	import { fade } from 'svelte/transition'
@@ -75,7 +75,7 @@
 	</div>
 </div>
 {#if $showForm}
-	<div class="fixed inset-0 grid place-items-center">
+	<div class="fixed inset-0 z-50 grid lg:place-items-center">
 		<div
 			class="absolute inset-0 -z-10 bg-black/20 backdrop-blur-sm"
 			on:keydown={() => {
@@ -83,7 +83,7 @@
 			}}
 			on:click={handleCloseForm}
 		/>
-		<div class="h-1/2 w-full max-w-lg bg-white lg:h-auto">
+		<div class="w-full max-w-lg bg-white md:mx-auto lg:mx-0">
 			<div class="flex items-center justify-end">
 				<button class="p-3 active:translate-y-1" on:click={handleCloseForm}>
 					<TimesIcon width={24} height={24} />

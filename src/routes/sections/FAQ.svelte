@@ -10,8 +10,8 @@
 
 <section class="py-12" use:storyblokEditable={blok}>
 	<div class="mx-auto flex max-w-screen-2xl flex-col gap-8 px-4 lg:flex-row">
-		<div class="flex flex-1 flex-col gap-10 bg-blue-100 p-10">
-			<h2 class="text-centesr text-2xl font-extrabold uppercase text-indigo-950">
+		<div class="flex flex-1 flex-col gap-10 bg-green-100 p-10">
+			<h2 class="text-centesr text-2xl font-extrabold uppercase text-green-700">
 				{blok.title}
 			</h2>
 			<div class="flex flex-col gap-5">

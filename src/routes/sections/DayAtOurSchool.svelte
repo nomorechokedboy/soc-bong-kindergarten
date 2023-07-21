@@ -7,7 +7,7 @@
 	export let blok: StoryblokComponent
 </script>
 
-<section class="bg-[#efefef] py-12" id="aDayAtOurSchool" use:storyblokEditable={blok}>
+<section class="bg-[#ebeff2] py-12" id="aDayAtOurSchool" use:storyblokEditable={blok}>
 	<div class="mx-auto max-w-screen-2xl px-4">
 		<div class="mb-7 flex flex-col gap-5">
 			{#each blok.top as { title, subTitle }}
